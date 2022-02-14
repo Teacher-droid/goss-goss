@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home 
+      <a class="nav-item nav-link" href="#">team</a>
+      <a class="nav-item nav-link" href="#">contact</a>
+      <%# <% if current_users %>  
+      <% if logged_in? %>
+         <a class="nav-link nav-item" href="<%= new_user_path %>">sign_in</a>
+      
+         <a class="nav-link nav-item" href="<%= new_session_path %>">session</a>
+      
+      <% else %>
+         
+         <a class="nav-link nav-item"><%=  link_to "Log out",  logout_path, method: "delete" %> </a> 
+        
+      <% end %>     
+    </div>
+  </div>
+</nav>
+ 
+<div class="page content ">
+  <div class="col-3">
+    <h1>Sign in:</h1><br>
+    <%= form_tag url_for(action:'create'), method: "post" do %>
+      <div class="form-group">
+        <%= label_tag 'Email', name = 'Email', class: 'font-weight-bold'%>
+        <%= text_field_tag 'email', nil, placeholder: 'email', class: 'form-control'%>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag 'Password', name = 'Password', class: 'font-weight-bold'%>
+        <%= password_field_tag 'password', nil, placeholder: 'password', class: 'form-control'%>
+      </div>
+
+    <%= submit_tag "Connexion", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+
+</html>

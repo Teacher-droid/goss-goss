@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a href="<%= root_path %>" class="nav-link">Home</a>
+      <a href="<%= team_path %>" class="nav-link">Team</a>
+      <a href="<%= contact_path %>" class="nav-link">Contact</a>
+      <% if current_users %>  
+      <% if logged_in? %>
+         <a class="nav-link nav-item" href="<%= new_user_path %>">sign_in</a>
+      
+         <a class="nav-link nav-item" href="<%= new_session_path %>">session</a>
+      
+      <% else %>
+         
+         <a class="nav-link nav-item"><%=  link_to "Log out",  logout_path, method: "delete" %> </a> 
+        
+      <% end %>     
+    </div>
+  </div>
+</nav>
+ 
+<div class="wrapping">
+
+<div class="jumbotron jumbotron-fluid text-center" style="background-image: url(https://i.pinimg.com/564x/7e/12/94/7e1294d5fdbd33d10726312ba874dd43.jpg)">
+  <div class="box mx-auto">
+    <h1 class="title"><b>THE GOSSIP PROJECT</b></h1>
+    <p class="lead"><b>This Gossip Project allows users to post, comment and like gossips...</b></p>
+     
+  </div>
+</div>
+<div class="container text-center">
+  <div class="page">
+    <h4><u>Juicy list of Gossips:</u></h4>
+    <div class="btn btn-outline-dark btn-lg link_no_decoration"><%= link_to "Crée un potin", new_gossip_path %></div>
+  </div>
+  <br>  
+
+  
+<div class="row">
+<% Gossip.all.each_with_index do |gossip,i| %>
+  <div class="col-sm-4 mx-auto pt-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= gossip.title %></h5>
+        <p class="card-text"><%= gossip.content %></p>
+          <div class="btn btn-outline-dark btn-lg link_no_decoration"><%= link_to "Voir le potin", gossip_path(gossip.id) %></div><br>
+        
+        <%= gossip.user.try(:first_name) %></p>
+          <%=gossip.title%>
+        <%if current_users.try(:first_name)==gossip.user.try(:first_name)%> 
+            <%if gossip.like ==false%> 
+            <div class = "btn btn-outline-dark btn-lg link_no_decoration"><%= link_to "Edit", edit_gossip_path(gossip.id)%></div>
+           <%=gossip.likecount+=1%>
+           <% end %> 
+          <br>
+        
+        <div class = "btn btn-outline-dark btn-lg link_no_decoration"><%= link_to "Edit", edit_gossip_path(gossip.id)%></div>
+        <div class = "btn btn-outline-dark btn-lg link_no_decoration"><%= link_to "Delete" , gossip_path(gossip.id), :method => "delete" %></div>    
+      <% end %>  
+      </div>
+    </div>
+  </div>
+<%end%>
+</div>
+
+<%end%>
+
+
+
+
+#<%# #form action="/like" method="post" >
+        <input type="hidden" name ="like[post_id]" value="<%= gossip.id %>
+          <%# <input type="submit" name ="Like"> %>

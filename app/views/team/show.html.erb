@@ -1,0 +1,79 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Home 
+      <a href="<%= team_path %>" class="nav-item nav-link">Team</a>
+      <a href="<%= contact_path %>" class="nav-item nav-link">Contact</a>
+      <%# <% if current_users %>  
+      <% if logged_in? %>
+         <a class="nav-link nav-item" href="<%= new_user_path %>">sign_in</a>
+      
+         <a class="nav-link nav-item" href="<%= new_session_path %>">session</a>
+      
+      <% else %>
+         
+         <a class="nav-link nav-item"><%=  link_to "Log out",  logout_path, method: "delete" %> </a> 
+        
+      <% end %>     
+    </div>
+  </div>
+</nav>
+ 
+<div class="wrapping">
+  <div class="text-center">
+  <h1 >Meet our great team!</h1><br>
+  <h2 style="color: #eeb4ba;">THE GOSSIP POLICE</h2>
+  </div>
+
+  <div class="page content">
+    <div class="row text-center">
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h4> Bubble<br>
+          <b>Powerpuff</b></h4><br>
+          <h3>UI/UX Designer</h3>
+          <p style="font-size:100px">&#127912;</p>
+          <h5><b>Description:</b></h5>
+          <p class="card-text">Hey! My name is Bubble, I am sweet and I really love Gossip as long as they are not mean because I am really sensitve.</p>
+          <h5><b>Send me a mail:</b></h5>
+          <a href="mailto:gossip@gossipproject.org">bubble@gossipproject.org</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 20rem;">
+        <div class="card-body ">
+          <h4> Blossom<br>
+          <b>Powerpuff</b></h4><br>
+          <h3>CEO</h3>
+          <p style="font-size:100px">&#128188;</p>
+          <h5><b>Description:</b></h5>
+          <p class="card-text">Hey my name is Blossom, I am the CEO of The Gossip Project. I am really proud of my team and i really love gossip! </p>
+          <h5><b>Send me a mail:</b></h5>
+          <a href="mailto:gossip@gossipproject.org">blossom@gossipproject.org</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+        <h4> Buttercup<br>
+          <b>Powerpuff</b></h4><br>
+          <h3>CTO</h3>
+          <p style="font-size:100px">&#128187;</p>
+          <h5><b>Description:</b></h5>
+          <p class="card-text">Hey, I am Buttercup, I am the CTO of The Gossip Project. I put a lots of effort into this web app. I hope you'll like it!</p>
+          <h5><b>Send me a mail:</b></h5>
+          <a href="mailto:gossip@gossipproject.org">buttercup@gossipproject.org</a>
+        </div>
+      </div>
+    </div><br><br>
+
+    <div class="fixed-bottom" style="text-align: center;">
+      <p>© The Gossip Project</p>
+    </div>
+  </div>
+</div>
