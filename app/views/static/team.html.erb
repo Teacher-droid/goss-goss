@@ -1,0 +1,69 @@
+<!-- Mise en place du header-->
+<header class="mb-3">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../">Welcome</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./team">Team<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="./contact">Contact</a>
+        </li>
+    </div>
+  </nav>
+</header>
+<!-- Mise en place d'un simili cards avec jumobotron-->
+<div class="text-center align-center">
+  <div class="jumbotron-hero jumbotron-fluid">
+
+    <h1 class="display-4 font-weight-bold" style="font-family: 'Roboto', sans-serif;">Un petit "Hacking cercle" qui s'aggrandira avec vous et nous</h1>
+    <h4 class="display-6" style="font-family: 'Montserrat', sans-serif;">Apprenez les nouvelles technologies qui vous tentent!</h4>
+    <button class="btn btn-info" role="button" style="font-family: 'Montserrat', sans-serif;"><a href="/contact">Je contacte l'équipe</a></button>
+    <button class="btn btn-info" role="button" style="font-family: 'Montserrat', sans-serif;" disabled><a href="/">Je découvre les potins</a></button>
+  </div>
+</div>
+
+<div class="container-fluid mb-4">
+  <div class="col-lg-1110">
+    <h2 class="text-info text-center" style="font-family: 'Montserrat', sans-serif;">Jetez un oeil à ce que nous avons appris et que vous pourriez <strong>vous aussi</strong> apprendre !</h2>
+  </div>
+  <div class="row justify-content-center row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+    <div class="card border-info mb-4" style="max-width: 20rem;">
+      <h4 class="card-title text-center"><%= image_tag("me.jpg", class: "w-100") %></h4>
+      <div class="card-body text-center">
+        <p class="card-text" style="font-family: 'Montserrat', sans-serif;">
+          Vous n'arrivez plus à dormir, ce projet vous sors par le nez et vous donne envie de vomir?<br>Damian aussi !
+        </p>
+        <button role="button" class="btn-info btn-primary btn-lg" style="font-family: 'Montserrat', sans-serif;"><a href="https://github.com/Teacher-droid">Ses pires cauchemards</a></button>
+      </div>
+    </div>
+    <div class="card border-info mb-4" style="max-width: 20rem;">
+      <h4 class="card-title text-center"><%= image_tag("ramen-burger.jpeg", class: "w-100") %></h4>
+      <div class="card-body text-center">
+        <p class="card-text" style="font-family: 'Montserrat', sans-serif;">
+          Vous êtes à la recherche de la meilleure recette de ramen au monde?<br>Ne cherchez plus! Votre estomac ne vous remerciera jamais assez !
+        </p>
+        <button role="button" class="btn-info btn-primary btn-lg" style="font-family: 'Montserrat', sans-serif;"><a href="https://www.youtube.com/watch?v=wH5DFk0xWO4">Bonne appétit</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <footer class="pt-4 my-md-5 pt-md-5">
+    <div class="row">
+      <div class="col-12 col-md">
+        <small class="d-block mb-3 text-muted">&copy; Bootstrap, et Hatching Hacking Cercle</small>
+      </div>
+    </div>
+  </footer>
+</div>

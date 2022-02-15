@@ -1,0 +1,40 @@
+<!-- Mise en place du header-->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Welcome</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../team">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<!-- Mise en place des cards avec tout les gossips-->
+<h1 class="text-center mt-3">Welcome <%= params[:id]%></h1>
+<p>
+
+<div class="col-md-12 text-center card-columns">
+  <% Gossip.all.each do |gossip| %>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= gossip.title %></h5>
+        <p class="card-text">Written by <%= gossip.user.first_name%> <%= gossip.user.last_name%> </p>
+        <a href="../gossip/<%= gossip.id %>" class="btn btn-primary">More details on this gossip</a>
+      </div>
+    </div>
+  <% end %>
+</div>
+</p>
+</form>
